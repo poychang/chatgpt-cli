@@ -95,4 +95,16 @@ public class CommandTests
         Assert.Equal(0, result.ExitCode);
         Assert.Equal("hello world", adapter.LastChatPrompt);
     }
+
+    [Fact]
+    public void Chat_WithUnicodePrompt_PreservesPrompt()
+    {
+        var adapter = new FakeCodexAdapter();
+        var app = CreateApp(adapter);
+
+        var result = app.Run("chat", "哈囉，世界！");
+
+        Assert.Equal(0, result.ExitCode);
+        Assert.Equal("哈囉，世界！", adapter.LastChatPrompt);
+    }
 }

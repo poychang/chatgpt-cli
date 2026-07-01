@@ -89,6 +89,14 @@ public sealed class CodexProcessAdapter : ICodexAdapter
         psi.RedirectStandardError = false;
         psi.RedirectStandardInput = stdin is not null;
 
+        if (stdin is not null)
+        {
+            // Codex expects prompts read from stdin to be UTF-8. The default
+            // StreamWriter encoding can follow the Windows console code page
+            // (for example, Big5/CP950), which corrupts non-ASCII prompts.
+            psi.StandardInputEncoding = new UTF8Encoding(encoderShouldEmitUTF8Identifier: false);
+        }
+
         using var process = Start(psi);
 
         if (stdin is not null)
