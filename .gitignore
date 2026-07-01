@@ -1,0 +1,12 @@
+# Build output
+bin/
+obj/
+
+# Rider / VS
+.idea/
+.vs/
+*.user
+
+# Codex credentials must never be committed
+**/auth.json
+.codex/
