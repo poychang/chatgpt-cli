@@ -1,7 +1,7 @@
 using System.Diagnostics;
 using System.Text;
 
-namespace OpenAiSubCli.Codex;
+namespace ChatGptCli.Codex;
 
 /// <summary>
 /// Default <see cref="ICodexAdapter"/> that shells out to the official Codex CLI.

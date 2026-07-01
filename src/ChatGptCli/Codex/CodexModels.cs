@@ -1,4 +1,4 @@
-namespace OpenAiSubCli.Codex;
+namespace ChatGptCli.Codex;
 
 /// <summary>
 /// Result of a delegated Codex process invocation.

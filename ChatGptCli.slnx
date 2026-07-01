@@ -1,0 +1,8 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/ChatGptCli/ChatGptCli.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/ChatGptCli.Tests/ChatGptCli.Tests.csproj" />
+  </Folder>
+</Solution>

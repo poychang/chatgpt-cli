@@ -1,6 +1,6 @@
 using System.Runtime.InteropServices;
 
-namespace OpenAiSubCli.Codex;
+namespace ChatGptCli.Codex;
 
 /// <summary>
 /// Locates the official Codex CLI executable on the current machine.

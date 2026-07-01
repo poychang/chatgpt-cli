@@ -1,6 +1,6 @@
-using OpenAiSubCli.Codex;
+using ChatGptCli.Codex;
 
-namespace OpenAiSubCli.Tests;
+namespace ChatGptCli.Tests;
 
 /// <summary>
 /// In-memory <see cref="ICodexAdapter"/> for tests. Records delegated calls and

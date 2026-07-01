@@ -1,7 +1,7 @@
-using OpenAiSubCli.Codex;
+using ChatGptCli.Codex;
 using Xunit;
 
-namespace OpenAiSubCli.Tests;
+namespace ChatGptCli.Tests;
 
 public class CodexLocatorTests
 {

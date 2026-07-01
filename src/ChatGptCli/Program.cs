@@ -1,6 +1,6 @@
-using OpenAiSubCli.Codex;
-using OpenAiSubCli.Commands;
-using OpenAiSubCli.Infrastructure;
+using ChatGptCli.Codex;
+using ChatGptCli.Commands;
+using ChatGptCli.Infrastructure;
 using Spectre.Console;
 using Spectre.Console.Cli;
 
@@ -11,7 +11,7 @@ registrar.RegisterInstance(typeof(IAnsiConsole), AnsiConsole.Console);
 var app = new CommandApp(registrar);
 app.Configure(config =>
 {
-    config.SetApplicationName("openai-sub");
+    config.SetApplicationName("chatgpt-cli");
 
     config.AddCommand<LoginCommand>("login")
         .WithDescription("Sign in with your ChatGPT subscription (delegated to the official Codex CLI).");

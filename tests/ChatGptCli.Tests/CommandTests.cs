@@ -1,10 +1,10 @@
-using OpenAiSubCli.Codex;
-using OpenAiSubCli.Commands;
-using OpenAiSubCli.Infrastructure;
+using ChatGptCli.Codex;
+using ChatGptCli.Commands;
+using ChatGptCli.Infrastructure;
 using Spectre.Console.Testing;
 using Xunit;
 
-namespace OpenAiSubCli.Tests;
+namespace ChatGptCli.Tests;
 
 public class CommandTests
 {

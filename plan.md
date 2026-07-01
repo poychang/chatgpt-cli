@@ -1,4 +1,4 @@
-# OpenAI Subscription Auth CLI — plan.md
+# ChatGPT CLI — plan.md
 
 版本日期：2026-07-01  
 目標語言：C# / .NET CLI  
@@ -69,9 +69,9 @@
 ## 4. 建議架構
 
 ```text
-openai-subscription-cli/
+chatgpt-cli/
 ├─ src/
-│  ├─ OpenAiSubCli/
+│  ├─ ChatGptCli/
 │  │  ├─ Program.cs
 │  │  ├─ Commands/
 │  │  │  ├─ LoginCommand.cs
@@ -91,7 +91,7 @@ openai-subscription-cli/
 │  │  └─ Security/
 │  │     ├─ SecretRedactor.cs
 │  │     └─ EnvironmentValidator.cs
-│  └─ OpenAiSubCli.Tests/
+│  └─ ChatGptCli.Tests/
 ├─ docs/
 │  ├─ auth-boundary.md
 │  ├─ supported-flows.md
@@ -110,7 +110,7 @@ openai-subscription-cli/
 ### 5.1 login（取得 ChatGPT subscription access）
 
 ```bash
-openai-sub login
+chatgpt-cli login
 ```
 
 行為：
@@ -125,7 +125,7 @@ openai-sub login
 ### 5.2 status（環境與授權狀態）
 
 ```bash
-openai-sub status
+chatgpt-cli status
 ```
 
 輸出內容：
@@ -141,7 +141,7 @@ openai-sub status
 ### 5.3 chat（簡單對話）
 
 ```bash
-openai-sub chat "你好，請用繁體中文回覆"
+chatgpt-cli chat "你好，請用繁體中文回覆"
 ```
 
 行為：
@@ -255,7 +255,7 @@ FutureOAuthAuthProvider
 ### 8.2 驗收條件
 
 ```bash
-openai-sub status
+chatgpt-cli status
 ```
 
 能清楚顯示：
@@ -267,7 +267,7 @@ Native OpenAI OAuth: not supported by this version
 ```
 
 ```bash
-openai-sub login
+chatgpt-cli login
 ```
 
 必須只做：
@@ -277,7 +277,7 @@ Launching official Codex login...
 ```
 
 ```bash
-openai-sub chat "hello"
+chatgpt-cli chat "hello"
 ```
 
 預期：
@@ -293,7 +293,7 @@ openai-sub chat "hello"
 1. 加入設定檔：
 
 ```bash
-openai-sub config set default-provider codex
+chatgpt-cli config set default-provider codex
 ```
 
 2. 加入互動式選單。
@@ -322,14 +322,14 @@ openai-sub config set default-provider codex
 原生 OAuth 可行後，命令可設計為：
 
 ```bash
-openai-sub auth login --chatgpt
+chatgpt-cli auth login --chatgpt
 ```
 
 但在第一版中，此命令應回應：
 
 ```text
 Native ChatGPT OAuth for third-party CLI is not supported by this version.
-Use `openai-sub login` to delegate subscription authentication to the official Codex CLI.
+Use `chatgpt-cli login` to delegate subscription authentication to the official Codex CLI.
 ```
 
 ---
@@ -382,7 +382,7 @@ Release: GitHub Actions
 ## 14. README 初始定位句
 
 ```text
-openai-sub is a C# CLI that provides a safe command-line interface for delegated Codex subscription workflows. It does not reverse-engineer or directly implement ChatGPT OAuth. Subscription access is delegated to the official Codex CLI where supported.
+chatgpt-cli is a C# CLI that provides a safe command-line interface for delegated Codex subscription workflows. It does not reverse-engineer or directly implement ChatGPT OAuth. Subscription access is delegated to the official Codex CLI where supported.
 ```
 
 ---

@@ -1,8 +1,0 @@
-<Solution>
-  <Folder Name="/src/">
-    <Project Path="src/OpenAiSubCli/OpenAiSubCli.csproj" />
-  </Folder>
-  <Folder Name="/tests/">
-    <Project Path="tests/OpenAiSubCli.Tests/OpenAiSubCli.Tests.csproj" />
-  </Folder>
-</Solution>

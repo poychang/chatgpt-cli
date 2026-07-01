@@ -1,11 +1,11 @@
-using OpenAiSubCli.Codex;
+using ChatGptCli.Codex;
 using Spectre.Console;
 using Spectre.Console.Cli;
 
-namespace OpenAiSubCli.Commands;
+namespace ChatGptCli.Commands;
 
 /// <summary>
-/// <c>openai-sub login</c> — delegates ChatGPT subscription login to the
+/// <c>chatgpt-cli login</c> — delegates ChatGPT subscription login to the
 /// official Codex CLI. This CLI never handles OAuth codes or tokens.
 /// </summary>
 public sealed class LoginCommand(ICodexAdapter adapter, IAnsiConsole console) : Command<LoginCommand.Settings>
@@ -24,7 +24,7 @@ public sealed class LoginCommand(ICodexAdapter adapter, IAnsiConsole console) : 
 
         if (exitCode == 0)
         {
-            console.MarkupLine("[green]Login flow completed.[/] Run [blue]openai-sub status[/] to verify.");
+            console.MarkupLine("[green]Login flow completed.[/] Run [blue]chatgpt-cli status[/] to verify.");
         }
         else
         {

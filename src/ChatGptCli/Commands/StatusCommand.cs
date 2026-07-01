@@ -1,12 +1,12 @@
 using System.Runtime.InteropServices;
-using OpenAiSubCli.Codex;
+using ChatGptCli.Codex;
 using Spectre.Console;
 using Spectre.Console.Cli;
 
-namespace OpenAiSubCli.Commands;
+namespace ChatGptCli.Commands;
 
 /// <summary>
-/// <c>openai-sub status</c> — reports whether the environment meets the
+/// <c>chatgpt-cli status</c> — reports whether the environment meets the
 /// requirements to run this CLI and the current ChatGPT subscription state.
 /// </summary>
 public sealed class StatusCommand(ICodexAdapter adapter, IAnsiConsole console) : Command<StatusCommand.Settings>
@@ -64,7 +64,7 @@ public sealed class StatusCommand(ICodexAdapter adapter, IAnsiConsole console) :
         if (loginStatus is { LoggedIn: false })
         {
             console.WriteLine();
-            console.MarkupLine("Run [blue]openai-sub login[/] to sign in with your ChatGPT subscription.");
+            console.MarkupLine("Run [blue]chatgpt-cli login[/] to sign in with your ChatGPT subscription.");
         }
 
         return 0;

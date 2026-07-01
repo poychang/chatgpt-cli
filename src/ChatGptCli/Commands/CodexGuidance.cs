@@ -1,7 +1,7 @@
-using OpenAiSubCli.Codex;
+using ChatGptCli.Codex;
 using Spectre.Console;
 
-namespace OpenAiSubCli.Commands;
+namespace ChatGptCli.Commands;
 
 /// <summary>
 /// Shared helpers for presenting the hard dependency on the official Codex CLI.

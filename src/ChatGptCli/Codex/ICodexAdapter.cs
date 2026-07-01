@@ -1,4 +1,4 @@
-namespace OpenAiSubCli.Codex;
+namespace ChatGptCli.Codex;
 
 /// <summary>
 /// Abstraction over the official Codex CLI. This layer isolates the rest of the

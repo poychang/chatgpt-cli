@@ -1,12 +1,12 @@
 using System.ComponentModel;
-using OpenAiSubCli.Codex;
+using ChatGptCli.Codex;
 using Spectre.Console;
 using Spectre.Console.Cli;
 
-namespace OpenAiSubCli.Commands;
+namespace ChatGptCli.Commands;
 
 /// <summary>
-/// <c>openai-sub chat</c> — a simple one-shot conversation, delegated to
+/// <c>chatgpt-cli chat</c> — a simple one-shot conversation, delegated to
 /// <c>codex exec</c>. The prompt is passed through stdin so it never appears
 /// on the process command line.
 /// </summary>
@@ -29,14 +29,14 @@ public sealed class ChatCommand(ICodexAdapter adapter, IAnsiConsole console) : C
         var prompt = ResolvePrompt(settings.Prompt);
         if (string.IsNullOrWhiteSpace(prompt))
         {
-            console.MarkupLine("[red]No prompt provided.[/] Usage: [blue]openai-sub chat \"your message\"[/]");
+            console.MarkupLine("[red]No prompt provided.[/] Usage: [blue]chatgpt-cli chat \"your message\"[/]");
             return 1;
         }
 
         var loginStatus = adapter.GetLoginStatus();
         if (!loginStatus.LoggedIn)
         {
-            console.MarkupLine("[yellow]Not logged in.[/] Run [blue]openai-sub login[/] first.");
+            console.MarkupLine("[yellow]Not logged in.[/] Run [blue]chatgpt-cli login[/] first.");
             return 1;
         }
 
@@ -50,7 +50,7 @@ public sealed class ChatCommand(ICodexAdapter adapter, IAnsiConsole console) : C
             return argument;
         }
 
-        // Allow piped input: `echo "hi" | openai-sub chat`.
+        // Allow piped input: `echo "hi" | chatgpt-cli chat`.
         if (Console.IsInputRedirected)
         {
             var piped = Console.In.ReadToEnd();

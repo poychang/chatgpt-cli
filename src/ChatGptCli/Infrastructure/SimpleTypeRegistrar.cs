@@ -1,6 +1,6 @@
 using Spectre.Console.Cli;
 
-namespace OpenAiSubCli.Infrastructure;
+namespace ChatGptCli.Infrastructure;
 
 /// <summary>
 /// Minimal <see cref="ITypeRegistrar"/> backed by a simple service map, so
